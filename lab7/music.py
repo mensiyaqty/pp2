@@ -76,4 +76,4 @@ while run:
     screen.blit(prevb, (273, 585))
 
     clock.tick(24)
-    pygame.display.update()
+    pygame.display.flip()

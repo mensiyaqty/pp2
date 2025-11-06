@@ -26,9 +26,13 @@ while True:
     if keys[pygame.K_LEFT]:
         ball_pos[0] = max(ball_pos[0] - speed, ball_radius)
     if keys[pygame.K_RIGHT]:
-        ball_pos[0] = min(ball_pos[0] + speed, window_size[0] - ball_radius)
+        ball_pos[0] += speed
+        if ball_pos[0] > 800:
+            ball_pos[0] = 0
+            continue
     
     screen.fill(bg_color)
-    pygame.draw.circle(screen, ball_color, ball_pos, ball_radius)
+    pygame.draw.circle(screen, ball_color, ball_pos , ball_radius)
     pygame.display.flip()
     pygame.time.Clock().tick(24)
+    
